@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
+  // debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
@@ -103,7 +105,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 4.0,
+        color: Colors.blueAccent,
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            IconButton(icon: Icon(Icons.menu), onPressed: (){},),
+            IconButton(icon: Icon(Icons.search), onPressed: (){},),
+          ]
+        ),
+      ),
+      floatingActionButtonLocation: 
+      FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
+        
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
@@ -111,3 +129,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// class _BottomAppBarContents extends
